@@ -10,6 +10,7 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
@@ -71,10 +72,21 @@
         </div>
       </div>
     </nav>
-    <div class="container py-4">
-        <div class="notifications">
-            
+
+    <!-- Loader -->
+    <div class="modal-loader hidden">
+      <div class="container-loader">
+        <div class="folder">
+          <div class="top"></div>
+          <div class="bottom"></div>
         </div>
+        <div class="title">Uploading...</div>
+      </div>
+    </div>
+    <!-- Form -->
+    <div class="overlay hidden"></div>
+    <div class="container py-4">
+      <div class="notifications"></div>
       <form
         action=""
         method="get"
@@ -108,4 +120,5 @@
     ></script>
   </body>
   <script type="module" src="index.js"></script>
+  <script type="module" src="loader.js"></script>
 </html>
