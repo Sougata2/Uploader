@@ -31,7 +31,8 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const storage = getStorage(app);
 const db = getFirestore(app);
-const linkNotifyEl = document.querySelector('.alert');
+const linkNotifyEl = document.querySelector(".alert");
+const downloadfilenameEl = document.querySelector("#download-file-name");
 
 ////////////////////////////
 //////////Functions////////
@@ -81,8 +82,9 @@ download_fileEl.addEventListener("click", function (e) {
 
       // Or inserted into an <img> element
       const img = document.getElementById("download-link");
-      linkNotifyEl.classList.remove('hidden');
-      img.href = url
+      linkNotifyEl.classList.remove("hidden");
+      downloadfilenameEl.textContent = `${file_name}`;
+      img.href = url;
     })
     .catch((error) => {
       // Handle any errors
